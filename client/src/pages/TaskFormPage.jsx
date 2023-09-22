@@ -62,7 +62,7 @@ export function TaskFormPages(){
 
         {params.id && (
             <div className="flex justify-end">
-            <button className="bg-red-500 p-3 rounded-lg w-48 mt-3" onClick={async ()=> {
+            <button className="bg-orange-600 p-3 rounded-lg w-48 mt-3" onClick={async ()=> {
             const accepted = window.confirm('Estas seguro de eliminar esta tarea?')
             if (accepted){
                 await deleteTask(params.id)
