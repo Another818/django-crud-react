@@ -5,7 +5,7 @@ const URL =
   ? import.meta.env.VITE_BACKEND_URL 
   : "http://localhost:8000";
 
-console.log(URL);
+console.log(process.env.NODE_ENV.trim());
 
 const taskApi = axios.create({
     baseURL: `${URL}/tasks/api/v1/tasks`,
