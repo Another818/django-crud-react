@@ -1,9 +1,8 @@
 import axios from 'axios';
+import { env } from 'node:process';
 
 const URL =
-    process.env.NODE_ENV === "production"
-        ? import.meta.env.VITE_BACKEND_URL
-        : "http://localhost:8000";
+  env.NODE_ENV === "production" ? import.meta.env.VITE_BACKEND_URL : "http://localhost:8000";
 
 console.log(URL);
 const taskApi = axios.create({
