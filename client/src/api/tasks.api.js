@@ -6,6 +6,7 @@ const URL =
   : "http://localhost:8000";
 
 console.log(process.env.NODE_ENV.trim());
+console.log(URL)
 
 const taskApi = axios.create({
     baseURL: `${URL}/tasks/api/v1/tasks`,
