@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const URL =
-  process.env.NODE_ENV === "production" ? import.meta.env.VITE_BACKEND_URL : "http://localhost:8000";
+  process.env.NODE_ENV === "production" 
+  ? import.meta.env.VITE_BACKEND_URL 
+  : "http://localhost:8000";
 
 console.log(URL);
 
