@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'corsheaders',
     'rest_framework',
     'coreapi',
@@ -62,15 +63,16 @@ ROOT_URLCONF = 'django_crud_api.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        # Tell Django where to find Reacts index.html file
+        "DIRS": [os.path.join(BASE_DIR, "client", "dist")],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
@@ -83,14 +85,9 @@ WSGI_APPLICATION = 'django_crud_api.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pev',
-        'USER': 'root',
-        'PASSWORD': 'WuEs4OtBQQgtwn3VHZbCsAZUMUbfqd42',
-        'HOST': '127.0.0.1', # O la dirección IP de tu servidor MySQL
-        'PORT': '3306', # El puerto por defecto de MySQL
-    }
+    "default":
+    dj_database_url.config(default="sqlite:///" +
+                        os.path.join(BASE_DIR, "db.sqlite3"))
 }
 
 
