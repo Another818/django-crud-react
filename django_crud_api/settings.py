@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-je#a5m57m^=zttbw&v*$!lt9h=uvr0-jznm6!m!b^9-2-lo(8!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1', 'django-crud-react-production-f420.up.railway.app']
+ALLOWED_HOSTS = ['localhost','127.0.0.1', 'django-crud-react-production-d07b.up.railway.app']
 
 
 # Application definition
