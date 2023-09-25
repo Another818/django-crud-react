@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const backendUrl = process.env.NODE_ENV.trim() === "production"
-? "https://django-crud-react-production-d07b.up.railway.app"
+? "https://incompetent-yarn-production.up.railway.app"
 : "http://localhost:8000";
 
 

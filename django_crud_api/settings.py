@@ -143,4 +143,4 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
 
-CSRF_TRUSTED_ORIGINS = ["http://*", "https://django-crud-react-production-d07b.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["http://*", "https://incompetent-yarn-production.up.railway.app"]
