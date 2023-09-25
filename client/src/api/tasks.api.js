@@ -6,9 +6,6 @@ const backendUrl = process.env.NODE_ENV.trim() === "production"
 : "http://localhost:8000";
 
 
-console.log(process.env.NODE_ENV.trim());
-console.log(backendUrl)
-
 const taskApi = axios.create({
     baseURL: `${backendUrl}/tasks/api/v1/tasks`,
 });

@@ -8,10 +8,6 @@ class Cliente(models.Model):
     direccion = models.CharField(max_length=60)
     telefono = models.CharField(max_length=10)
 
-    class Meta:
-        managed = False  # Indica que Django no debe gestionar esta tabla
-        db_table = 'cliente'  # Nombre de la tabla existente en la base de datos
-
     def __str__(self):
         return f"{self.ci} | {self.nombre} {self.apellido}"
 
@@ -23,10 +19,6 @@ class Producto(models.Model):
     stock = models.IntegerField()
     precio = models.IntegerField()
 
-    class Meta:
-        managed = False  # Indica que Django no debe gestionar esta tabla
-        db_table = 'producto'  # Nombre de la tabla existente en la base de datos
-
     def __str__(self):
         return f"{self.cod_producto} | {self.nombre}"
 
@@ -35,10 +27,6 @@ class Proveedor(models.Model):
     nombre = models.CharField(max_length=20)
     direccion = models.CharField(max_length=30)
     telefono = models.IntegerField()
-
-    class Meta:
-        managed = False  # Indica que Django no debe gestionar esta tabla
-        db_table = 'proveedor'  # Nombre de la tabla existente en la base de datos
 
     def __str__(self):
         return f"{self.id_proveedor} | {self.nombre}"
@@ -50,9 +38,6 @@ class Compra(models.Model):
     fecha_compra = models.DateField(null=True)  # Campo FECHA_COMPRA
     cantidad = models.IntegerField(null=True)  # Campo CANTIDAD
 
-    class Meta:
-        managed = False  # Indica que Django no debe gestionar esta tabla
-        db_table = 'compra'  # Nombre de la tabla existente en la base de datos
 
     def __str__(self):
         return f"Compra {self.id_compra}"
@@ -63,10 +48,6 @@ class Provee(models.Model):
     cod_producto = models.ForeignKey(Producto, on_delete=models.CASCADE, null=True, db_column='COD_PRODUCTO')  # Clave foránea hacia Producto
     fecha = models.DateField(null=True)  # Campo FECHA_COMPRA
     cantidad = models.IntegerField(null=True)  # Campo CANTIDAD
-
-    class Meta:
-        managed = False  # Indica que Django no debe gestionar esta tabla
-        db_table = 'provee'  # Nombre de la tabla existente en la base de datos
 
     def __str__(self):
         return f"Producto: {self.cod_producto} proveido por {self.id_proveedor}"
